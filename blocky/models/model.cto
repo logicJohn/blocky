@@ -1,0 +1,151 @@
+/*
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+/**
+ * My commodity trading network
+ */
+ /*
+
+//THIS IS WHERE MY CODE STARTS
+
+asset Dossier identified by dossierId {
+  o String dossierId
+  o String age
+  o Boolean agePermission
+  o String sex
+  o Boolean sexPermission
+  o String favFood
+  o Boolean favFoodPermission
+  o String favStore
+  o Boolean favStorePermission
+  o String favGame
+  o Boolean favGamePermission
+  --> Consumer owner
+}
+
+asset Dquery identified by dqueryId {
+  o String dqueryId
+  o String age
+  o String sex
+  o String favFood
+  o String favStore
+  o String favGame
+  o 
+}
+
+participant Consumer identified by consumerId {
+  o String consumerId
+  o Double currency
+  
+}
+
+
+participant Auditor identified by auditorId {
+  o String auditorId
+  o Double currency
+}
+
+participant Collector identified by collectorId {
+  o String collectorId
+  o Double currency
+}
+
+participant Researcher identified by researcherId {
+  o String researcherId
+  o Double currency
+}
+
+transaction purchase {
+  --> Dossier dossier
+  --> Researcher newOwner
+}
+
+transaction update {
+  --> Dossier dossier
+  --> Collector collector
+}
+*/
+
+/*
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+/**
+ * Sample business network definition.
+ */
+namespace org.acme.pii
+
+asset ConsumerInfo identified by assetId {
+  o String assetId
+  --> Consumer owner
+  o Double value //This is the price each request is worth
+}
+
+participant Consumer identified by consumerId {
+  o String consumerId
+  o String firstName
+  o String lastName
+  o Double balance
+
+  o String favFood
+  o String favStore
+  o String favShoe
+  o String favWebsite
+}
+
+participant Client identified by clientId {
+  o String clientId
+  o String clientName
+  o Double balance
+}
+
+participant Service identified by serviceId {
+  o String serviceId
+  o String serviceName
+  o Double balance
+  
+}
+
+participant Regulator identified by regulatorId {
+  o String regulatorId
+  o String regulatorName
+  o String regulatorOrginization
+}
+
+transaction SampleTransaction {
+  --> Client buyer
+  --> ConsumerInfo asset
+  --> Consumer seller
+  --> Service server
+  o Double newValue
+}
+
+event SampleEvent {
+  --> Client buyer
+  --> ConsumerInfo asset
+  --> Consumer seller
+  --> Service server
+  o String oldValue
+  o String newValue
+}
