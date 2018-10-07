@@ -2,7 +2,7 @@
   "name": "blocky",
   "author": "author",
   "description": "This will be a pii demo for showing an example of how blockID could be used",
-  "version": "0.0.4",
+  "version": "1.0.0",
   "devDependencies": {
     "browserfs": "^1.2.0",
     "chai": "^3.5.0",
