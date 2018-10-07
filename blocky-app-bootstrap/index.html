@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>BlockID</title>
+  <!-- Latest compiled and minified CSS -->
+  <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B"
+    crossorigin="anonymous">
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light">
+    <a class="navbar-brand img-fluid m-2">
+      <img src="img/BlockID.png" id="logo">
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navCollapse" aria-controls="nav-tab" aria-expanded="false"
+      aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navCollapse">
+      <div class="nav nav-tabs" id="nav-tab" role="tablist">
+        <a class="nav-item nav-link" id="nav-client-tab" data-toggle="tab" href="#nav-client" role="tab" aria-controls="nav-client"
+          aria-selected="false" onclick="loadClients()">Clients</a>
+        <a class="nav-item nav-link active show" id="nav-consumer-tab" data-toggle="tab" href="#nav-consumer" role="tab" aria-controls="nav-consumer"
+          aria-selected="true" onclick="loadConsumers()">Consumers</a>
+        <a class="nav-item nav-link" id="nav-service-tab" data-toggle="tab" href="#nav-service" role="tab" aria-controls="nav-service"
+          aria-selected="false" onclick="loadServiceProviders()">Service Providers</a>
+        <a class="nav-item nav-link" id="nav-regulator-tab" data-toggle="tab" href="#nav-regulator" role="tab" aria-controls="nav-regulator"
+          aria-selected="false" onclick="loadRegulators()">Regulators</a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container-fluid">
+    <div class="tab-content" id="nav-tabContent">
+      <div class="tab-pane fade" id="nav-client" role="tabpanel" aria-labelledby="nav-client-tab">
+        <div class="d-flex flex-row justify-content-between">
+          <div class="">
+            <h1 class="mt-2">Client</h1>
+            <p>
+              Clients are the agencies purchasing data from the consumers.
+            </p>
+          </div>
+          <button class="btn btn-primary btn-sm mr-3 mt-3" id="query-button" data-toggle="modal" data-target="#consumer-query-modal"
+            onclick="loadModalData()">Query Consumer Info</button>
+        </div>
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <th scope="col">Client ID</th>
+              <th scope="col">Client Name</th>
+              <th scope="col">Balance</th>
+            </tr>
+          </thead>
+          <tbody id="client-table-body">
+            <tr>
+              <th scope="row">001</th>
+              <td>American Express</td>
+              <td>5,650.00</td>
+            </tr>
+            <tr>
+              <th scope="row">002</th>
+              <td>DummyClient2</td>
+              <td>3,220.00</td>
+            </tr>
+            <tr>
+              <th scope="row">003</th>
+              <td>DummyClient3</td>
+              <td>3,245.00</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="tab-pane fade active show" id="nav-consumer" role="tabpanel" aria-labelledby="nav-consumer-tab">
+        <h1 class="mt-2">Consumer
+          <div></div>
+        </h1>
+        <p>
+          Consumers are the individuals supplying their data to the blockchain.
+        </p>
+        <table class="table table-hover">
+          <thead class="rounded">
+            <tr>
+              <th scope="col">ConsumerId</th>
+              <th scope="col">First Name</th>
+              <th scope="col">Last Name</th>
+              <th scope="col">Balance</th>
+              <th scope="col">Favorite Hobby</th>
+              <th scope="col">Favorite Food</th>
+              <th scope="col">Favorite Store</th>
+              <th scope="col">Favorite Shoe</th>
+              <th scope="col">Favorite Website</th>
+            </tr>
+          </thead>
+          <tbody id="consumer-table-body">
+            <tr>
+              <th scope="row">001</th>
+              <td>Bruce</td>
+              <td>Wayne</td>
+              <td>100.00</td>
+              <td>bat watching</td>
+              <td>steak</td>
+              <td>BATS!</td>
+              <td>oxfords</td>
+              <td>www.news.com</td>
+            </tr>
+            <tr>
+              <th scope="row">002</th>
+              <td>Judge</td>
+              <td>Harris</td>
+              <td>1.30</td>
+              <td>gaming</td>
+              <td>pizza</td>
+              <td>Steam</td>
+              <td>socks</td>
+              <td>www.gamers.com</td>
+            </tr>
+            <tr>
+              <th scope="row">003</th>
+              <td>Hanna</td>
+              <td>Hacker</td>
+              <td>38.65</td>
+              <td>hacking</td>
+              <td>doritos</td>
+              <td>Hot Topic</td>
+              <td>sneakers</td>
+              <td>www.hackers.com</td>
+            </tr>
+            <tr>
+              <th scope="row">004</th>
+              <td>Lisette</td>
+              <td>Anders</td>
+              <td>21.40</td>
+              <td>dog walking</td>
+              <td>sweet roll</td>
+              <td>Petco</td>
+              <td>sneakers</td>
+              <td>www.dogs.com</td>
+            </tr>
+            <tr>
+              <th scope="row">005</th>
+              <td>Geralt</td>
+              <td>Rivia</td>
+              <td>18.63</td>
+              <td>fencing</td>
+              <td>apple</td>
+              <td>Patagonia</td>
+              <td>leather boots</td>
+              <td>www.witchers.com</td>
+            </tr>
+            <tr>
+              <th scope="row">006</th>
+              <td>Booker</td>
+              <td>DeWitt</td>
+              <td>8.49</td>
+              <td>reading</td>
+              <td>steak</td>
+              <td>SkyMall</td>
+              <td>oxfords</td>
+              <td>www.skyliving.com</td>
+            </tr>
+            <tr>
+              <th scope="row">007</th>
+              <td>Robin</td>
+              <td>Scherbatsky</td>
+              <td>65.12</td>
+              <td>going to the mall</td>
+              <td>poutine</td>
+              <td>the mall</td>
+              <td>flats</td>
+              <td>www.news.com</td>
+            </tr>
+            <tr>
+              <th scope="row">008</th>
+              <td>Zojja</td>
+              <td>Day</td>
+              <td>32.41</td>
+              <td>dragon fighting</td>
+              <td>pineapple</td>
+              <td>AsuraTech</td>
+              <td>boots</td>
+              <td>www.asuratech.com</td>
+            </tr>
+            <tr>
+              <th scope="row">009</th>
+              <td>Daenerys</td>
+              <td>Targaryen</td>
+              <td>89.32</td>
+              <td>dragon training</td>
+              <td>horse heart</td>
+              <td>Dragons R Us</td>
+              <td>sandals</td>
+              <td>www.dragons.com</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="tab-pane fade" id="nav-service" role="tabpanel" aria-labelledby="nav-service-tab">
+        <h1 class="mt-2">Service Providers</h1>
+        <p>
+          Service providers are the central groups maintaining the various services enabled by the blockchain.
+        </p>
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <th scope="col">Service ID</th>
+              <th scope="col">Service Name</th>
+              <th scope="col">Balance</th>
+            </tr>
+          </thead>
+          <tbody id="service-provider-table-body">
+            <tr>
+              <th scope="row">001</th>
+              <td>IBM</td>
+              <td>320,400.00</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="tab-pane fade" id="nav-regulator" role="tabpanel" aria-labelledby="nav-regulator-tab">
+        <h1 class="mt-2">Regulators</h1>
+        <p>
+          Regulators will have access to the consumer information to ensure that safe and fair practices are being used as a supplement
+          to the inherent security of the blockchain.
+        </p>
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <th scope="col">Regulator ID</th>
+              <th scope="col">Regulator Name</th>
+              <th scope="col">Regulator Organization</th>
+            </tr>
+          </thead>
+          <tbody id="regulator-table-body">
+            <tr>
+              <th scope="row">001</th>
+              <td>IRS</td>
+              <td>Federal</td>
+            </tr>
+            <tr>
+              <th scope="row">002</th>
+              <td>Watson</td>
+              <td>IBM</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="modal" id="consumer-query-modal" tabindex="-1" rold="dialog" aria-labelledby="consumer-query-modal" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h3 class="modal-title" id="consumer-query-modal">Query Consumer Information</h3>
+            <button type="button" class="close" data-dismiss="modal" aria-lable="Close">
+              <span aria-hidden="true">×</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <table class="table table-hover table-sm h6">
+              <thead>
+                <tr>
+                  <th scope="col">ConsumerId</th>
+                  <th scope="col">Favorite Hobby</th>
+                  <th scope="col">Favorite Food</th>
+                  <th scope="col">Favorite Store</th>
+                  <th scope="col">Favorite Shoe</th>
+                  <th scope="col">Favorite Website</th>
+                </tr>
+              </thead>
+              <tbody id="consumer-modal-table-body">
+
+              </tbody>
+            </table>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <img src="img/Blocky.png" class="mr-3 mb-3" id="blocky">
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+      crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em"
+      crossorigin="anonymous"></script>
+    <script src="app.js"></script>
+
+
+  </div>
+</body>
+
+</html>

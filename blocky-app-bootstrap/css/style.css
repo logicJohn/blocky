@@ -1,0 +1,95 @@
+body {
+  font-family: "IBM Plex Sans", sans-serif !important;
+  color: #373232;
+}
+
+#query-button {
+  height: 100%;
+  box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
+  text-transform: uppercase;
+}
+
+#query-button:active {
+  box-shadow: none;
+  transform: translate(0px, 1px);
+}
+
+#blocky {
+  max-height: 100px;
+  max-width: 100px;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+}
+
+#blocky:hover {
+  -webkit-animation: spin 4s linear infinite;
+  -moz-animation: spin 4s linear infinite;
+  animation: spin 1.5s linear infinite;
+}
+@-moz-keyframes spin {
+  100% {
+    -moz-transform: rotate(360deg);
+  }
+}
+@-webkit-keyframes spin {
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+@keyframes spin {
+  25% {
+    -webkit-transform: rotate(-25deg);
+    transform: rotate(-25deg);
+  }
+  50% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  75% {
+    -webkit-transform: rotate(25deg);
+    transform: rotate(25deg);
+  }
+  100% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+}
+
+#logo {
+  max-height: 35px;
+}
+
+thead tr th {
+  background-color: #95d13c;
+  color: #ffffff;
+}
+
+a {
+  color: #5392ff !important;
+  text-transform: uppercase;
+}
+
+.btn-primary {
+  background-color: #5392ff !important;
+  border-color: #5392ff !important;
+}
+
+thead {
+  border: solid white 3px !important;
+}
+
+.modal-dialog {
+  min-width: 63%;
+  margin: auto;
+}
+
+.nav-link {
+  padding-top: 9px !important;
+  padding-bottom: 5px !important;
+}
+
+.nav-link.active {
+  color: #ffb000 !important;
+  box-shadow: 0px -3px 3px #f0f3f6;
+}
