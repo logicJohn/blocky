@@ -3,7 +3,9 @@
 Ignore blocky2 it is my test subject muahahahahahaha
 
 
-*** Thanks to some friends for making a kick-ass mascot for me :D ***
+*** Thanks to Mellissa for making a kick-ass mascot for me :D ***
+
+*** this requires hyperledger technology installed to view containers/cards ***
 
 
 ### BlockID powered by Blocky
